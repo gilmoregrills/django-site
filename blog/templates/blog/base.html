@@ -11,6 +11,9 @@
     <body>
         
         <div class="page-header">
+            {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
             <h3><a href="http://www.robinyonge.co.uk">Hey buddy! You're on my development site right now, click here.</a></h3>
             <h1><a href="http://www.robinyonge.co.uk">Robin Yonge</a></h1>
             <h2>Sound Recording, Design, and Tech I guess?</h2>
