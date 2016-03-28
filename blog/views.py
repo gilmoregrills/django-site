@@ -40,3 +40,20 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form' : form})
 
+def media_list(request):
+    media = Media.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
+    return render(request, 'blog/media_list.html', {'media' : media})
+
+def media_edit(request, pk):
+    media = get_object_or_404(Media, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=media) #where the fuck does PostForm come from??
+        if form.is_valid():
+            media = form.save(commit=False)
+            media.author = request.user
+            media.created_date = timezone.now()
+            media.save()
+            return redirect('media_list', pk=media.pk)
+    else:
+        form = PostForm(instance=media)
+    return render(request, 'blog/media_edit.html', {'form' : form})

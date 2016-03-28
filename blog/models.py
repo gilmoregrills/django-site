@@ -17,5 +17,11 @@ class Post(models.Model):
         
     def __str__(self):
         return self.title
-
-    
+        
+class Media(models.Model):
+    title = models.CharField(max_length=150)
+    content = models.CharField(max_length=200)#is there something that will take an embeddable URL? CharField (must have embed tags) that feeds into the media_item.html
+    description = models.CharField(max_length=300)
+    credits = models.CharField(max_length=200)
+    created_date = models.DateTimeField(
+        default=timezone.now)
