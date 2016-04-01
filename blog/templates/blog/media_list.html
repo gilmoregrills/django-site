@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="content container">
+        <div class ="row">
+    
+        {% for media in medias %}
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="date">
+                                <p>created: {{ media.published_date }}</p>
+                    </div>
+                    <div class="content">
+                        <h2><a href ="{% url 'media_detail' pk=media.pk %}">{{ media.title }}</a></h2>
+                        <p>{{ media.content }}</p>
+                    </div>    
+                </div> 
+            </div>
+        {% endfor %}
+    
+        </div>
+    </div>
+{% endblock %}

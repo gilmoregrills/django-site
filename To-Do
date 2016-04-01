@@ -1,5 +1,0 @@
-add gallery template with content containers 
-add media_item template media_edit html templates
-add media model to models.py
-
-work out how to edit views.py and the two urls.py files to point to gallery.html etc

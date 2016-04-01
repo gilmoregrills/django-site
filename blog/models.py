@@ -17,11 +17,23 @@ class Post(models.Model):
         
     def __str__(self):
         return self.title
-        
+    
+media = models.ForeignKey('Media')
+    
 class Media(models.Model):
+    author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=150)
-    content = models.CharField(max_length=200)#is there something that will take an embeddable URL? CharField (must have embed tags) that feeds into the media_item.html
-    description = models.CharField(max_length=300)
+    content = models.TextField()#is there something that will take an embeddable URL? CharField (must have embed tags) that feeds into the media_item.html
+    description = models.TextField()
     credits = models.CharField(max_length=200)
     created_date = models.DateTimeField(
         default=timezone.now)
+    published_date = models.DateTimeField(
+        blank=True, null=True)
+    
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+        
+    def __str__(self):
+        return self.title
