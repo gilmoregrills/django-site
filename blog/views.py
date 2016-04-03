@@ -7,6 +7,7 @@ from .forms import PostForm
 from .forms import MediaForm
 from django.shortcuts import redirect
 
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts' : posts})
@@ -52,7 +53,7 @@ def media_list(request):
 
 def media_new(request):
     if request.method == "POST":
-        form = MediaForm(request.POST)
+        form = MediaForm(request.POST,)
         if form.is_valid():
             media = form.save(commit=False)
             media.author = request.user

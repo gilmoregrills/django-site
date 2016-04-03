@@ -1,19 +1,22 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="content container">
+    <div class="gallery">
         <div class ="row">
     
         {% for media in medias %}
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="date">
-                                <p>created: {{ media.published_date }}</p>
+            <div class="col-xs-8 col-sm-6 col-md-4" align="center">
+                <div class="project-small">
+                    <div class="date_title">
+                        <h3><a href ="{% url 'media_detail' pk=media.pk %}">{{ media.title }}</a></h3>
+                        <p>Released: {{ media.published_date }}</p>
                     </div>
-                    <div class="content">
-                        <h2><a href ="{% url 'media_detail' pk=media.pk %}">{{ media.title }}</a></h2>
-                        <p>{{ media.content }}</p>
-                    </div>    
+                    <span class="thumbnail">
+                        <iframe name="video" width="360" height="205" src="{{ media.content }}" ></iframe>
+                    </span>
+                    <div class="credits">
+                        <p>Credits: {{ media.credits }}</p>
+                    </div>       
                 </div> 
             </div>
         {% endfor %}

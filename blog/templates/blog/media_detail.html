@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div class="media">
+    <div class="media" align="center">
         {% if media.created_date %}
             <div class="date">
                 {{ media.created_date }}
@@ -10,16 +10,16 @@
         {% endif %}
         
         {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'media_edit' pk=media.pk %}"><span class="glyphicon glyphicon-film"></span></a>
+            <a class="btn btn-default" href="{% url 'media_edit' pk=media.pk %}" align="right"><span class="glyphicon glyphicon-film"></span></a>
         {% endif %}
-        
-        <h1>{{ media.title }}</h1>
-            <div class="media">
-                <embed>{{ media.content }}</embed>
-                <!-- whaaat do I put in this section? I guess something like {{ media.content }} I think-->
-            </div> 
-        <p1>{{ media.description }}</p>
-        <p2>{{ media.credits }}</p>
+            <div class="content">
+                <h1>{{ media.title }}</h1>
+                    <div class="media">
+                         <iframe name="video" width="800" height="450" src="{{ media.content }}"></iframe>
+                    </div> 
+                <p align="center">{{ media.description }}</p>
+                <p align= "center">{{ media.credits }}</p>
+            </div>
             
     </div>
 

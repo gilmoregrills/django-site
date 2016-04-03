@@ -9,7 +9,7 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'text',)
         
 class MediaForm(forms.ModelForm):
-    
     class Meta:
         model = Media
-        fields = ('title', 'content', 'description', 'credits')
+        fields = ('title', 'content', 'image', 'description', 'credits', 'created_date',)
+        

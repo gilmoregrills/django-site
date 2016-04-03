@@ -1,11 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="content container">
+    <div class="blog">
             <div class="row">
-                <div class="col-md-8">
+                
                     {% for post in posts %}
-                        <div class="post">
+                        <div class="col-sm-8, col-lg-10 post">
+            
                             <div class="date">
                                 <p>published: {{ post.published_date }}</p>
                             </div>
@@ -13,7 +14,6 @@
                                 <p>{{ post.text|linebreaks }}</p>
                         </div>
                     {% endfor %}
-                </div>
-            </div>
+            </div>  
     </div>
 {% endblock %}

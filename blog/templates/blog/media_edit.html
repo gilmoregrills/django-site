@@ -1,10 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>Media</h1>
+    <div class="project" align="center">
+        <h1>Media</h1>
         <form method="POST" class="media-form">{% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="save btn btn-default">Save</button>
 
         </form>
+    </div>
+    
 {% endblock %}

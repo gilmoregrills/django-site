@@ -1,7 +1,32 @@
+/*this section affects the entire <body> of all pages*/
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    background-color: #fffff9;
+    padding-bottom: 40%;
+    margin: 0;
+}
+
+/*this section affects main text attributes*/
+h1, h2, h3, h4 {
+    font-family: 'Bree Serif', serif;
+}
+
+p {
+    font-size: 11pt;
+    font-family: 'Lato';
+}
+
+
+/*this section affects the header*/
 .page-header {
-    background-color: #F2FFFB;
+    background-color: #f3feff;
     margin-top: 0px;
-    padding: 20px 20px 20px 40px
+    padding: 20px 20px 20px 40px;
     
 }
 
@@ -11,12 +36,16 @@
     text-decoration: overline;
 }
 
-.content {
-    margin-left: 40px;
+.top-menu, .topmenu:hover, .top-menu:visited {
+    color:antiquewhite;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
 }
-    
-h1, h2, h3, h4 {
-    font-family: 'Bree Serif', serif;
+
+/*this section affects the whole blog/post/gallery/media block*/
+.block-container {
+    min-height: 100%;
 }
 
 .date {
@@ -25,24 +54,63 @@ h1, h2, h3, h4 {
 }
 
 .save {
-    float: right;
+    float: none;
 }
 
 .post-form textarea, .post-form input {
     width: 100%;
 }
 
-.top-menu, .topmenu:hover, .top-menu:visited {
-    color:antiquewhite;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
-
-.post {
-    margin-bottom 70px;
-}
+/*this section affects the detailed post view/edit post view*/
 
 .post h1 a, .post h1 a:visited {
     color: #29241A;
+}
+
+/*this section affects the gallery view/media view/edit media view*/
+
+.thumbnail {
+    box-shadow: 3px 3px 2px #fff9fc;
+}
+
+/*this section affects the sidebar*/ 
+
+.sidebar-module {
+    max-height: 100%;
+    position: absolute;
+    right: 25px;
+    padding: 15px;
+    margin: 0 -15px 15px;
+}
+.sidebar-module-inset {
+    padding: 15px;
+    background-color: #f3feff;
+    border-radius: 4px;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+    margin-bottom: 0;
+}
+
+/*this section affects the footer*/
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 200px;
+    background-color: #f3feff;    
+}
+
+.footer-left, .footer-right {
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
+.foot-menu, .footmenu:hover, .foot-menu:visited {
+    color:antiquewhite;
+    font-size: 26pt;
+    float: right;
+    margin-right: 20px;
 }
