@@ -4,18 +4,18 @@
     <div class="gallery">
         <div class ="row">
     
-        {% for media in medias %}
+        {% for project in projects %}
             <div class="col-xs-8 col-sm-6 col-md-4" align="center">
                 <div class="project-small">
                     <div class="date_title">
-                        <h3><a href ="{% url 'media_detail' pk=media.pk %}">{{ media.title }}</a></h3>
-                        <p>Released: {{ media.published_date }}</p>
+                        <h3><a href ="{% url 'project_detail' pk=project.pk %}">{{ project.title }}</a></h3>
+                        <p>Released: {{ project.published_date }}</p>
                     </div>
                     <span class="thumbnail">
-                        <iframe name="video" width="360" height="205" src="{{ media.content }}" ></iframe>
+                        <iframe name="video" width="360" height="205" src="{{ project.content }}" ></iframe>
                     </span>
                     <div class="credits">
-                        <p>Credits: {{ media.credits }}</p>
+                        <p>Credits: {{ project.credits }}</p>
                     </div>       
                 </div> 
             </div>

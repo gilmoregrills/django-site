@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Post
-from .models import Media
+from .models import Project
 
-admin.site.register(Media)
+admin.site.register(Project)
 admin.site.register(Post)   

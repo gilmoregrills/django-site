@@ -18,9 +18,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
-media = models.ForeignKey('Media')
+project = models.ForeignKey('Project')
     
-class Media(models.Model):
+class Project(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=150)
     content = models.URLField()#is there something that will take an embeddable URL? CharField (must have embed tags) that feeds into the media_item.html

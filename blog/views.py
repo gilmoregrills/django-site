@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.utils import timezone 
 from .models import Post
-from .models import Media
+from .models import Project
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
-from .forms import MediaForm
+from .forms import ProjectForm
 from django.shortcuts import redirect
 
 
@@ -43,37 +43,37 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form' : form})
 
-def media_detail(request, pk):
-    media = get_object_or_404(Media, pk=pk)
-    return render(request, 'blog/media_detail.html', {'media' : media})
+def project_detail(request, pk):
+    project = get_object_or_404(Project, pk=pk)
+    return render(request, 'blog/project_detail.html', {'project' : project})
 
-def media_list(request):
-    medias = Media.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
-    return render(request, 'blog/media_list.html', {'medias' : medias})
+def project_list(request):
+    projects = Project.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
+    return render(request, 'blog/project_list.html', {'projects' : projects})
 
-def media_new(request):
+def project_new(request):
     if request.method == "POST":
-        form = MediaForm(request.POST,)
+        form = ProjectForm(request.POST,)
         if form.is_valid():
-            media = form.save(commit=False)
-            media.author = request.user
-            media.created_date = timezone.now()
-            media.save()
-            return redirect('media_detail', pk=media.pk)
+            project = form.save(commit=False)
+            project.author = request.user
+            project.created_date = timezone.now()
+            project.save()
+            return redirect('project_detail', pk=project.pk)
     else:
-        form = MediaForm()
-    return render(request, 'blog/media_edit.html', {'form' : form})
+        form = ProjectForm()
+    return render(request, 'blog/project_edit.html', {'form' : form})
 
-def media_edit(request, pk):
-    media = get_object_or_404(Media, pk=pk)
+def project_edit(request, pk):
+    project = get_object_or_404(Project, pk=pk)
     if request.method == "POST":
-        form = MediaForm(request.POST, instance=media) 
+        form = ProjectForm(request.POST, instance=project) 
         if form.is_valid():
-            media = form.save(commit=False)
-            media.author = request.user
-            media.created_date = timezone.now()
-            media.save()
-            return redirect('media_detail', pk=media.pk)
+            project = form.save(commit=False)
+            project.author = request.user
+            project.created_date = timezone.now()
+            project.save()
+            return redirect('project_detail', pk=project.pk)
     else:
-        form = MediaForm(instance=media)
-    return render(request, 'blog/media_edit.html', {'form' : form})
+        form = ProjectForm(instance=project)
+    return render(request, 'blog/project_edit.html', {'form' : form})

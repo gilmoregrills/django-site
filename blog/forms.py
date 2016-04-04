@@ -1,6 +1,6 @@
 from django import forms
 from .models import Post
-from .models import Media
+from .models import Project
 
 class PostForm(forms.ModelForm):
     
@@ -8,8 +8,8 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'text',)
         
-class MediaForm(forms.ModelForm):
+class ProjectForm(forms.ModelForm):
     class Meta:
-        model = Media
+        model = Project
         fields = ('title', 'content', 'image', 'description', 'credits', 'created_date',)
         
