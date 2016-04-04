@@ -61,6 +61,10 @@ p {
     width: 100%;
 }
 
+.project-description {
+    width: 800px;
+}
+
 /*this section affects the detailed post view/edit post view*/
 
 .post h1 a, .post h1 a:visited {
