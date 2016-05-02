@@ -7,7 +7,7 @@
         <link href='https://fonts.googleapis.com/css?family=Raleway|Lato:400,700|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <title>Robin Yonge</title>
     </head>
-
+    
     <body>
         <div class="page-header">
             {% if user.is_authenticated %}
@@ -20,60 +20,59 @@
                     <h2>Sound Recording, Design, and Tech I guess?</h2>
                 </span>
         </div>
-
-
-        <div class="col-sm-2 col-sm-offset-1 sidebar-module" align="right">
+     
+        
+        <div class="col-xs-0 col-sm-2 col-sm-offset-1 sidebar-module" align="right">
            <div class="sidebar-module-inset">
                 <a href="http://www.robinyonge.co.uk/admin"><span class="glyphicon glyphicon-lock" align="left"></span></a>
                 <span class="menu" align="right">
-                    <h4><a href="{% url 'post_list' %}">Blog/Home</a></h4>
-                    <h4><a href="{% url 'project_list' %}">Project Gallery</a></h4>
+                    <h4><a href="{% url 'post_list' %}">Blog/Home</a></h4> 
+                    <h4><a href="{% url 'project_list' %}">Project Gallery</a></h4> 
                 </span>
                     <div class="description" align="left">
                         <h3>Tonlehrling</h3>
                         <p>This site's supposed to be an account of the things that I learn and the work I produce. Usually relating to audio/visual media, programming, The Internet and learning how to be a grown-up.</p>
                         <h4>Currently working on:</h4>
                         <p>Audio-centric VR projects + movement mechanics for virtual reality</p>
-                        <p>Post-production on indie feature film 'The Passenger'</p>
-                        <p>Post-production on TV pilot 'The Invisible'</p>
+                        <p>Pre-production on an independent TV Pilot</p>
                         <p>Learning in more depth about CS/Programming</p>
-                        <p>This site</p>
+                        <p>Fixing the very messy frontend on this site</p>
                         <h4>Currently Reading:</h4>
                         <p>Code: The Hidden Language of Computer Hardware and Software - Charles Petzold</p>
                         <p>Red Mars - Kim Stanley Robinson</p>
-
+                        
                     </div>
-
+               
                     <div class="social" align="center">
                         <a class="twitter-timeline" href="https://twitter.com/tonlehrling" data-widget-id="695160703179714560">Tweets by @tonlehrling</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                     </div>
             </div>
-
+           
         </div>
-
-
+        
+        
         <div class="block container">
-            <div class="row">
-
+            <div class="col-sm-6 col-md-8 col-lg-10 row">
+                
                     {% block content %}
-
+                    
                     {% endblock %}
-
+               
             </div>
         </div>
     <!-- Bootstrap core JavaScript [totes stolen from the blog example page b/c whyever not]
-    ==================================================
-    <!-- Placed at the end of the document so the pages load faster -->
+    ================================================== 
+    <!-- Placed at the end of the document so the pages load faster --> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
-
+   
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-
+    
+        
     </body>
-
+    
     <footer>
             <div class="row">
                 <div class="col-sm-6 footer-left" align="left">

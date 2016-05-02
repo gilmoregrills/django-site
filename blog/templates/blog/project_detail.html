@@ -2,27 +2,18 @@
 
 {% block content %}
 
-    <div class="project" align="center">
-        {% if project.created_date %}
+    <div class="post">
+        {% if post.published_date %}
             <div class="date">
-                {{ project.created_date }}
+                {{ post.published_date }}
             </div>
         {% endif %}
 
         {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'project_edit' pk=project.pk %}" align="right"><span class="glyphicon glyphicon-film"></span></a>
+                <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
-            <div class="content">
-                <h1>{{ project.title }}</h1>
-                    <div class="media">
-                         <iframe name="video" width="800" height="450" src="{{ project.content }}"></iframe>
-                    </div>
-                    <div class="project-description">
-                        <p align="center">{{ project.description }}</p>
-                        <p align= "center">{{ project.credits }}</p>
-                    </div>
-            </div>
-
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaks }}</p>
     </div>
 
 {% endblock %}
