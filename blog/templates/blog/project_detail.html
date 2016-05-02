@@ -8,7 +8,7 @@
                 {{ project.created_date }}
             </div>
         {% endif %}
-        
+
         {% if user.is_authenticated %}
             <a class="btn btn-default" href="{% url 'project_edit' pk=project.pk %}" align="right"><span class="glyphicon glyphicon-film"></span></a>
         {% endif %}
@@ -16,11 +16,13 @@
                 <h1>{{ project.title }}</h1>
                     <div class="media">
                          <iframe name="video" width="800" height="450" src="{{ project.content }}"></iframe>
-                    </div> 
-                <p align="center">{{ project.description }}</p>
-                <p align= "center">{{ project.credits }}</p>
+                    </div>
+                    <div class="project-description">
+                        <p align="center">{{ project.description }}</p>
+                        <p align= "center">{{ project.credits }}</p>
+                    </div>
             </div>
-            
+
     </div>
 
-{% endblock %} 
+{% endblock %}
