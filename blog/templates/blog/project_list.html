@@ -5,15 +5,15 @@
         <div class ="row">
     
         {% for project in projects %}
-            <div class="col-xs-8 col-sm-6 col-md-4" align="center">
+            <div class="col-xs-8 col-sm-5 col-md-5 col-lg-4" align="center">
                 <div class="project-small">
                     <div class="date_title">
                         <h3><a href ="{% url 'project_detail' pk=project.pk %}">{{ project.title }}</a></h3>
                         <p>Released: {{ project.published_date }}</p>
                     </div>
-                    <span class="thumbnail">
-                        <iframe name="video" width="360" height="205" src="{{ project.content }}" ></iframe>
-                    </span>
+                    <div class="thumbnail">
+                        <iframe name="video" width="350" height="195" src="{{ project.content }}" ></iframe>
+                    </div>
                     <div class="credits">
                         <p>Credits: {{ project.credits }}</p>
                     </div>       
