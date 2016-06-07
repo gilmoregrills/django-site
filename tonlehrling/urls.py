@@ -18,6 +18,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls), #maybe should be include.(admin.site.urls)),
     url(r'', include('blog.urls')), #maybe should be (r'^blog/' etc
+    url(r'', include('bot.urls')),
 ]
