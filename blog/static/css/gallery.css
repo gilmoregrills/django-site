@@ -1,3 +1,9 @@
+iframe {
+    border: 0;
+    border.width: 0px;
+    border-style: hidden;
+}
+
 .page-header {
     background-color: #F2FFFB;
     margin-top: 0px;
@@ -46,3 +52,4 @@ h1, h2, h3, h4 {
 .post h1 a, .post h1 a:visited {
     color: #29241A;
 }
+

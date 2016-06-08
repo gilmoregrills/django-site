@@ -12,6 +12,12 @@ body {
     overflow-x: hidden;
 }
 
+iframe {
+    border: 0;
+    border.width: 0px;
+    border-style: hidden;
+}
+
 /*this section affects main text attributes*/
 h1, h2, h3, h4 {
     font-family: 'Bree Serif', serif;
@@ -67,6 +73,8 @@ p {
     width: 800px;
 }
 
+
+
 /*this section affects the detailed post view/edit post view*/
 
 .post h1 a, .post h1 a:visited {
@@ -77,15 +85,11 @@ p {
 .project-small{
     width: fixed;
     height: fixed;
+    border-style: none;
+    border-width: 0;
 }
 
-/**.thumbnail {
-    width: fixed;
-}**/  
 
-.video {
-    
-}
 
 /*this section affects the sidebar*/
 #sidebar {

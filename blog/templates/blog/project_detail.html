@@ -3,25 +3,26 @@
 {% block content %}
 
     <div class="project" align="center">
-        {% if project.created_date %}
+<!--        {% if project.created_date %}
             <div class="date">
                 {{ project.created_date }}
             </div>
-        {% endif %}
-
-        {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'project_edit' pk=project.pk %}" align="right"><span class="glyphicon glyphicon-film"></span></a>
-        {% endif %}
-            <div class="content">
-                <h1>{{ project.title }}</h1>
+        {% endif %} -->
+            <div class="content" style="padding-top:30px">
                     <div class="media">
-                         <iframe name="video" width="800" height="450" src="{{ project.content }}"></iframe>
+                         <embed name="video" width="800" height="450" src="{{ project.content }}"></embed>
                     </div>
+             
                     <div class="project-description">
+                    	<h1>{{ project.title }} - {{ project.published_date }}</h1>
                         <p align="center">{{ project.description }}</p>
                         <p align= "center">{{ project.credits }}</p>
                     </div>
             </div>
+
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'project_edit' pk=project.pk %}" align="right"><span class="glyphicon glyphicon-film"></span></a>
+        {% endif %}
 
     </div>
 
