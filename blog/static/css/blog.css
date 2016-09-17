@@ -6,7 +6,7 @@ html {
 body {
     position: relative;
     min-height: 100%;
-    background-color: #fffff9;
+    background-color: #fffffe;
     padding-bottom: 40%;
     margin: 0;
     overflow-x: hidden;
@@ -30,7 +30,20 @@ p {
 
 
 /*this section affects the header*/
+.editor-menu {
+    background-color: #b3cccc;
+    margin-top: 0px;
+    padding: 20px 20px 20px 20px;
+}
+
+.add-item {
+    padding: 5px 10px 10px 5px;
+    position: relative;
+    color: antiquewhite;
+}
+
 .page-header {
+    position: relative;
     background-color: #f3feff;
     margin-top: 0px;
     padding: 20px 20px 20px 40px;
@@ -43,23 +56,28 @@ p {
     text-decoration: overline;
 }
 
-.top-menu, .topmenu:hover, .top-menu:visited {
-    color:antiquewhite;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
+/*this section affects the whole blog/post/gallery/media block*/
+#main-content {
+    text-align: center;
+    position: relative;
+    margin-left: 0px;
+    padding: 25px;
+
 }
 
-/*this section affects the whole blog/post/gallery/media block*/
 .block-container {
+    text-align: left;
+    position: relative;
     min-height: 100%;
-    padding-top: 100px;
+
+
 }
 
 .date {
     float: right;
     color: #FFD270;
 }
+
 
 .save {
     float: none;

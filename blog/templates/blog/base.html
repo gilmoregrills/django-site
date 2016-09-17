@@ -12,34 +12,38 @@
     </head>
     
     <body>
+        <div class="authcheck">
+        {% if user.is_authenticated %}
+            <div class="editor-menu">
+                    <a href="{% url 'post_new' %}" class="add-item"><span class="glyphicon glyphicon-plus"></span></a>
+                    <a href="{% url 'project_new' %}" class="add-it"><span class="glyphicon glyphicon-film"></span></a>
+            </div>
+        {% endif %}
+        </div>  
+
         <div class="page-header">
-            {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-                <a href="{% url 'project_new' %}" class="top-menu"><span class="glyphicon glyphicon-film"></span></a>
-            {% endif %}
-                <span class="title">
-                    <h3>Hey buddy! This site's currently (and perpetually will be) in development. If anything seems janky, that's why!</a></h3>
-                    <h1><a href="http://www.robinyonge.com">Robin Yonge</a></h1>
-                    <h2>Sound Recording, Design, and Tech I guess?</h2>
-                </span>
+            <span class="Announcement" align="center">
+                <h4>Hey buddy! This site's currently (and perpetually will be) in development. If anything seems janky, that's why.</a></h4>
+            </span>
+            <span class="title" align="center">
+                <h1><a href="http://www.robinyonge.com">Robin Yonge</a></h1>
+               <!-- <h2>Sound Recording, Design, and Tech I guess?</h2> --> 
+            </span>
         </div>
      
         <div class="row row-offcanvas row-offcanvas-right">
             
-            <div class="col-xs-11 col-sm-9">
-            <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle Sidebar</button>
-            </p>
+            <div class="col-xs-11 col-sm-9 main-content" align="left">
                 <div class="block container">
                             {% block content %}
 
                             {% endblock %}
                 </div>  
             </div>
-                <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 sidebar-offcanvas" id="sidebar">
+                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 sidebar-offcanvas" id="sidebar">
                    <div class="sidebar-content">
-                        <a href="http://www.robinyonge.co.uk/admin"><span class="glyphicon glyphicon-lock" align="right"></span></a>
                         <span class="menu" align="right">
+                            <h4><a href="http://www.robinyonge.co.uk/admin"><span class="glyphicon glyphicon-lock"></span></a></h4>
                             <h4><a href="{% url 'post_list' %}">Blog/Home</a></h4> 
                             <h4><a href="{% url 'project_list' %}">Project Gallery</a></h4> 
                         </span>
