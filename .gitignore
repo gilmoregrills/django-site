@@ -4,3 +4,7 @@ djangsitenv
 db.sqlite3
 /static
 .DS_Store
+.gitignore
+awsdjango
+gunicorn-error.log
+gunicorn.log
